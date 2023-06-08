@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="400"></canvas>
+
+  <script>
+    // Get the canvas element and its context
+    const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("2d");
+
+    // Set initial position and velocity of the ball
+    let x = canvas.width / 2;
+    let y = canvas.height / 2;
+    let dx = 2; // horizontal velocity
+    let dy = 2; // vertical velocity
+    const radius = 20;
+
+    function drawBall() {
+      // Clear the canvas
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the ball
+      context.beginPath();
+      context.arc(x, y, radius, 0, Math.PI * 2);
+      context.fillStyle = "red";
+      context.fill();
+      context.closePath();
+
+      // Update the ball's position
+      x += dx;
+      y += dy;
+
+      // Detect collisions with the canvas boundaries
+      if (x + dx > canvas.width - radius || x + dx < radius) {
+        dx = -dx;
+      }
+      if (y + dy > canvas.height - radius || y + dy < radius) {
+        dy = -dy;
+      }
+
+      // Call the drawBall function again to create animation
+      requestAnimationFrame(drawBall);
+    }
+
+    // Start the animation
+    drawBall();
+  </script>
+</body>
+</html>
