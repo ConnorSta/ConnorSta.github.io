@@ -1,0 +1,50 @@
+body{
+    background-color: darkkhaki;
+}
+
+h1{
+    color: blue;
+    font-style:oblique;
+
+}
+
+li{
+    color:red;
+    font-style:oblique;
+}
+
+h2{
+    color:blueviolet;
+    font-style:arial;
+    font-size:36;
+}
+a{
+    position: relative;
+    text-decoration: none;
+    color: #222
+    font-size: 18px;
+    letter-spacing: .5px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+a:before,
+a:after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background: orangered;
+    transition: .5s;
+}
+a:after{
+    left: 0;
+    bottom: -10px;
+}
+a:before{
+    right:0;
+    top: -10px;
+}
+a:hover:after,
+a:hover:before{
+    width: 100%
+}

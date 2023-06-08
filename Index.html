@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>My Page Titel</title>
+        <link rel="icon" type="image/c-icon" href="plane.png">
+    </head>
+</html>
+<body>
+    <link rel=stylesheet href="style.css">
+    <a href="index.html" style="text-decoration:none;">HOME</a>
+    <a href="page2.html"style="text-decoration:none;">Page 2</a>
+    <a href="page3.html"style="text-decoration:none;">Page 3</a>
+    <style>
+        h1{
+            width: max-content;
+            font-size: 72px;
+            position: relative;
+            cursor: pointer;
+            margin:100px auto;
+        }
+        h1::after{
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            height: 4px;
+            width: 100%;
+            left: 0;
+            transition: 0.3s;
+            transition-timing-function: ease-in-out;
+            transform: scaleX(0);
+        }
+        h1:hover::after{
+            transform: scaleX(1);
+        }
+    </style>
+
+
+    <h1>This is my Home Page!</h1>
+    <br>
+    <h2>My Favorite Foods</h2>
+    <ul>
+        <li>Suishi</li>
+        <li>Pizza</li>
+        <li>Sausage</li>
+        <li>Lebron</li>
+    </ul>
+</body>
